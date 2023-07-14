@@ -2,7 +2,7 @@
 
 Link to dataset: https://archive.ics.uci.edu/ml/machine-learning-databases/wine-quality/
 
-#Initial Analysis and Work Done on Dataset:
+# Initial Analysis and Work Done on Dataset:
 
 The dataset from UCI is divided into red and white wine dataset, white wine dataset was used as it had more instances than the
 red wine dataset, it contained 4898 instances. It has 11 feature columns and 1 target multi-class column of wine quality ranging
@@ -18,3 +18,16 @@ applied to it. In that paper, SVMs performed the best, although it was used for 
 (2022), where they rearranged the features using PCA and applied 1D-CNN and further optimised the features using
 backpropagation. In this paper, they also compared the performance of CNN to other methods and CNN gave the best accuracy of
 83%.
+
+# Model Description:
+
+In MATLAB, the neural net was trained using trainrp which is a network training function that updates weight and bias values
+according to the resilient backpropagation algorithm. Through experimentation by changing hidden layer sizes and learning rates,
+the parameters which led to the best performance of the model were found iteratively. It is intuitive that the higher the number of
+hidden neurons and epochs will lead to longer training time and this was true in this model’s experimentation. During the
+experimentation, it was apparent that adjusting learning rates too drastically had an adverse effect on the model’s performance.
+The final architecture of the model included 7 hidden-layer neurons, sigmoid function as activation function, 250 epochs and a
+learning rate of 0.4.
+
+Training speed: 18.9 seconds
+Test set accuracy: 79%
